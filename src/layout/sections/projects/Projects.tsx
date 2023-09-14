@@ -1,17 +1,33 @@
 import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import Proj1Picture from "../../../assets/images/some_background.png";
+import AlicePicture from "../../../assets/images/Alice.jpg";
+import AlexPicture from "../../../assets/images/Alex.jpg";
+import AnnaPicture from "../../../assets/images/Anna.jpg";
+import {Container} from "../../../components/container/Container";
+
+type ProjectsPropsType = {
+    bgi: any;
+    headerTopText?: string;
+    headerBottomText?: string;
+    mainText?: string;
+}
 
 export const Projects = () => {
     return (
         <StyledProjects>
-            <FlexWrapper direction={"column"} align={"center"}>
-                <h2>Мои проекты</h2>
-                <Project/>
-                <Project/>
-                <Project/>
-            </FlexWrapper>
+            <Container maxWidth={"1040px"} padding={"0"}>
+                <FlexWrapper direction={"column"} align={"center"} justify={"space-between"} height={"2070px"}>
+                    <StyledMyProjects>Мои проекты</StyledMyProjects>
+                    <Project bgi={AlicePicture} headerTopText={"АЛИСА"} headerBottomText={"Преодолевает трудности припеваючи"}
+                    mainText={"Проект в работе уже более 16 лет. За это время достигнуты такие результаты как награды в вокальных конкурсах, сдача ОГЭ, приобретены навыки уборки и готовки."}/>
+                    <Project bgi={AlexPicture} headerTopText={"САША"} headerBottomText={"С мечтами о спорте"}
+                             mainText={"Проект 2012 года, второе название: \"мамин сын\". Продолжает развиваться, в планах золотой мяч, математика и стоматология."}/>
+                    <Project bgi={AnnaPicture} headerTopText={"АНЯ"} headerBottomText={"Настоящая принцесса"}
+                    mainText={"Последний! проект 2018 года. Несмотря на свежесть проекта, уже показывает высокие результаты и видимые перспективы. Особая фича: умеет вить веревки из отца."}/>
+                    <SomeDiv/>
+                </FlexWrapper>
+            </Container>
         </StyledProjects>
     );
 };
@@ -21,42 +37,39 @@ const StyledProjects = styled.section`
 
 `
 
-export const Project = () => {
+export const Project = (props: ProjectsPropsType) => {
     return (
-        <StyledProject>
+        <StyledProject bgi={props.bgi}>
             <FlexWrapper justify={"space-around"}>
                 <StyledProjectHeader>
-                    <h3>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </h3>
+                    <StyledH3>
+                        {props.headerTopText}
+                    </StyledH3>
+                    <StyledP>
+                        {props.headerBottomText}
+                    </StyledP>
                 </StyledProjectHeader>
                 <StyledProjectText>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eligendi eos quaerat quo
-                        reprehenderit. Consectetur, facere, fugiat. Assumenda blanditiis, commodi dolor enim eveniet
-                        ipsa labore maiores maxime nobis, odit officia praesentium quam reprehenderit, rerum tempora
-                        temporibus voluptatibus? Dignissimos, molestiae sit?
-                    </p>
-                    <p>
-                        <a href={"#"}>Подробнее `{'>'}`</a>
-                    </p>
+                    <StyledMainText>
+                        {props.mainText}
+                    </StyledMainText>
+                    <StyledA href={"#"}>Подробнее {">"}</StyledA>
                 </StyledProjectText>
             </FlexWrapper>
         </StyledProject>
     )
 }
 
-const StyledProject = styled.div`
+const StyledProject = styled.div<ProjectsPropsType>`
   width: 1040px;
   height: 447px;
-  background-image: url(${Proj1Picture});
+  background-image: url(${props => props.bgi});
   margin: 5px;
 `
 
 const StyledProjectHeader = styled.div`
   width: 433px;
   color: white;
-  font-family: Epilogue;
   font-size: 45px;
   font-style: normal;
   font-weight: 200;
@@ -66,10 +79,56 @@ const StyledProjectHeader = styled.div`
 const StyledProjectText = styled.div`
   width: 433px;
   color: white;
-  font-family: Epilogue;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   margin: 50px 0 0 0;
+`
+
+const StyledMyProjects = styled.span`
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 93.5%;
+  padding: 170px 0 0 0;
+  width: 100px;
+  align-self: flex-start;
+`
+
+const StyledH3 = styled.h3`
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color:white;
+  margin: 92px 0 16px 0;
+`
+
+const StyledP = styled.p`
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+`
+
+const StyledMainText = styled.p`
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 50px 0 20px 130px;
+`
+const StyledA = styled.a`
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: white;
+  margin: 0 0 0 130px;
+`
+
+const SomeDiv = styled.div`
+
+  margin: 0 0 170px 0;
 `

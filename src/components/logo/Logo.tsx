@@ -1,10 +1,10 @@
 import React from 'react';
-import {Icon} from "../icon/Icon";
+import myLogo from "../../assets/images/myLogo.png";
 
 export const Logo = () => {
     return (
         <a href="">
-            <Icon iconId={"man"} svgSize={"30px"} svgViewBox={"0 0 64 64"}/>
+            <img src={myLogo} alt={"my logo"}/>
         </a>
     );
 };
