@@ -10,31 +10,33 @@ export const Main = () => {
     return (
         <StyledMain>
             <Container maxWidth={"1140px"} position={"relative"}>
-                <FlexWrapper justify={"flex-start"} direction={"column"}>
-                    <HelloStyled>ПРИВЕТ Я АНТОН</HelloStyled>
-                    <CircleText/>
+                <FlexWrapper>
+                    <FlexWrapper justify={"flex-start"} direction={"column"}>
+                        <HelloStyled>ПРИВЕТ Я АНТОН</HelloStyled>
+                        <CircleText/>
+                    </FlexWrapper>
+                    <PhotoWrapper>
+                        <Photo src={mainPhoto}/>
+                    </PhotoWrapper>
                 </FlexWrapper>
-                <Photo src={mainPhoto}/>
-                <StyledBackSquare/>
             </Container>
         </StyledMain>
     );
 };
 
 const StyledMain = styled.section`
-  min-height: 40vh;
+  min-height: 100vh;
   background-color: #a8eabd;
 `
 
 const Photo = styled.img`
-  width: 570px;
-  height: 570px;
+
   transform: rotate(7.517deg);
   object-fit: cover;
   position: absolute;
   z-index: 1;
-  right: 3%;
-  top: 22%
+  //right: 3%;
+  top: 12%
 `
 
 const HelloStyled = styled.div`
@@ -47,14 +49,20 @@ const HelloStyled = styled.div`
   margin: 155px 0 0 0;
 `
 
-const StyledBackSquare = styled.div`
-  background-color: ${theme.colors.underPhotoSquareColor};
-  width: 570px;
-  height: 570px;
-  transform: rotate(-7.517deg);
-  position: absolute;
+const PhotoWrapper = styled.div`
+  position: relative;
   z-index: 0;
-  right: 3%;
-  top: 22%
-  
+  right: 15%;
+
+  &::before {
+    background-color: ${theme.colors.underPhotoSquareColor};
+    content: "";
+    width: 570px;
+    height: 570px;
+    transform: rotate(-7.517deg);
+    position: absolute;
+    z-index: 0;
+    top: 12%;
+  }
+
 `

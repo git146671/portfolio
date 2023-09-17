@@ -12,7 +12,7 @@ type SkillPropsType = {
 
 export const Skills = () => {
     return (
-        <StyledSkills>
+        <section>
             <Container maxWidth={"1340px"}>
                 <FlexWrapper wrap={"wrap"} justify={"space-between"}>
                     <Skill iconObject={<Icon iconId={"accident"} svgSize={"160px"} svgViewBox={"0 0 500 500"}/>}
@@ -35,13 +35,9 @@ export const Skills = () => {
                            skillText={"Умею и не люблю учить. Знаком с книгами колобок, курочка-ряба, алгебра за 9 класс, биология за 5 класс и прочей литературой."}/>
                 </FlexWrapper>
             </Container>
-        </StyledSkills>
+        </section>
     );
 };
-
-const StyledSkills = styled.section`
-  background-color: #9afc8b;
-`
 
 export const Skill = (props: SkillPropsType) => {
     return (

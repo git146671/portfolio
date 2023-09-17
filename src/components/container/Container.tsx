@@ -13,6 +13,5 @@ export const Container = styled.div<ContainerPropsType>`
   position: ${props => props.position || "unset"};
   padding: ${props => props.padding || "0 15px"};
   margin: 0 auto;
-  //border: 1px solid red;
 
 `
