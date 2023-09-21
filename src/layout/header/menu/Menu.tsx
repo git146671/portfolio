@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {theme} from "../../styles/Theme";
-import {FlexWrapper} from "../FlexWrapper";
+import {theme} from "../../../styles/Theme";
+import {FlexWrapper} from "../../../components/FlexWrapper";
 
 export const Menu = () => {
     return (
@@ -39,5 +39,7 @@ const StyledMenu = styled.nav`
     width: 110px;
   }
   
-
+  @media ${theme.media.tablet} {
+    display: none;
+}
 `

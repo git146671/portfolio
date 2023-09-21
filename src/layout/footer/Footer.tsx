@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Icon} from "../../components/icon/Icon";
-import {Logo} from "../../components/logo/Logo";
 import {Container} from "../../components/container/Container";
 
 export const Footer = () => {
@@ -11,7 +10,7 @@ export const Footer = () => {
             <Container maxWidth={"1050px"}>
                 <FlexWrapper justify={"space-around"}>
                     <div>
-                        <Logo/>
+                        <Icon iconId={"ap"} svgSize={"40px"} svgViewBox={"0 0 48 48"}/>
                         <StyledMenu>
                             <ul>
                                 <li><a href="">Мои навыки</a></li>
@@ -87,8 +86,7 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  align-items: center;
+  padding: 0 0 0 5px;
 `
 
 const StyledInputBtn = styled.input`

@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from "styled-components";
-import {Logo} from "../../components/logo/Logo";
-import {Menu} from "../../components/menu/Menu";
+import {Menu} from "./menu/Menu";
 import {Container} from "../../components/container/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
+import {Icon} from "../../components/icon/Icon";
+import {MobileMenu} from "./mobileMenu/MobileMenu";
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Container maxWidth={"1040px"}>
                 <FlexWrapper justify={"space-between"}>
-                    <Logo/>
+                    <Icon iconId={"ap"} svgSize={"40px"} svgViewBox={"0 0 48 48"}/>
                     <Menu/>
+                    <MobileMenu/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
