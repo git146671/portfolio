@@ -5,18 +5,17 @@ import {theme} from "../../../styles/Theme";
 export const MobileMenu = () => {
     return (
         <StyledMobileMenu>
-
-            <BurgerBtn isOpen={true}>
+            <a href="">
+                <StyledLetsTalkBtn isOpen={false}>Поболтаем?</StyledLetsTalkBtn>
+            </a>
+            <BurgerBtn isOpen={false}>
                 <span></span>
             </BurgerBtn>
-            <MobileMenuWrapper isOpen={true}>
+            <MobileMenuWrapper isOpen={false}>
                 <ul>
                     <li><a href="">Мои проекты</a></li>
                     <li><a href="">Обо мне</a></li>
                     <li><a href="">Контакты</a></li>
-                    <li><a href="">
-                        <button>Поболтаем?</button>
-                    </a></li>
                 </ul>
             </MobileMenuWrapper>
         </StyledMobileMenu>
@@ -41,8 +40,8 @@ const StyledMobileMenu = styled.nav`
 
 const BurgerBtn = styled.button<{ isOpen: boolean }>`
   position: fixed;
-  top: -100px;
-  right: -100px;
+  top: -40px;
+  right: -50px;
   width: 200px;
   height: 200px;
   z-index: 200;
@@ -53,11 +52,11 @@ const BurgerBtn = styled.button<{ isOpen: boolean }>`
     height: 1px;
     background-color: #292D32;
     position: absolute;
-    left: 30px;
-    top: 50px;
+    left: 10px;
+    top: 70px;
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
-      color: rgba(255, 255, 255, 0);
+      background-color: rgba(255, 255, 255, 0);
     `}
     &::before {
       content: "";
@@ -85,8 +84,8 @@ const BurgerBtn = styled.button<{ isOpen: boolean }>`
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         transform: rotate(45deg) translateY(0);
       `}
-    }
-  }
+     }
+   }
 `
 
 const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
@@ -111,10 +110,23 @@ const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
     gap: 30px;
     list-style: none;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
   }
 
   li {
     align-self: center;
   }
+`
+
+const StyledLetsTalkBtn = styled.button<{ isOpen: boolean }>`
+  position: fixed;
+  top: 9px;
+  right: 65px;
+  z-index: 200;
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    top: -100px;
+    right: -100px;
+  `}
+    
 `
