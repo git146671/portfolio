@@ -1,1 +1,1 @@
-{"version":3,"file":"static/css/main.8e2bc2c7.css","mappings":"AAAA,QACI,aACJ","sources":["App.css"],"sourcesContent":["div.App {\n    margin: 0 auto;\n}\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"static/css/main.8e2bc2c7.css","mappings":"AAAA,QACI,aACJ","sources":["App.css"],"sourcesContent":["div.App {\r\n    margin: 0 auto;\r\n}\r\n"],"names":[],"sourceRoot":""}
