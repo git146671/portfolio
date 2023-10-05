@@ -3,12 +3,13 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Icon} from "../../components/icon/Icon";
 import {Container} from "../../components/container/Container";
+import {theme} from "../../styles/Theme";
 
 export const Footer = () => {
     return (
         <StyledFooter>
             <Container maxWidth={"1050px"}>
-                <FlexWrapper justify={"space-around"}>
+                <FlexWrapper justify={"space-between"} wrap={"wrap"}>
                     <div>
                         <Icon iconId={"ap"} svgSize={"40px"} svgViewBox={"0 0 48 48"}/>
                         <StyledMenu>
@@ -21,7 +22,7 @@ export const Footer = () => {
                     </div>
                     <div>
                         <StyledH3>Подписаться на мою рассылку</StyledH3>
-                        <FlexWrapper>
+                        <FlexWrapper wrap={"wrap"}>
                             <StyledInput type={"email"} placeholder={"Введите свой email"}/>
                             <StyledInputBtn type={"submit"} value={"Подписаться"}/>
                         </FlexWrapper>
@@ -48,12 +49,19 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   margin: 80px 0;
+  @media ${theme.media.mobile} {
+    margin: 24px 0;
+  }
 `
 
 
 const StyledMenu = styled.nav`
   margin: 20px 0 0 0;
   color: black;
+
+  @media ${theme.media.mobile} {
+    margin-top: 10px;
+  }
 
   ul {
     font-size: 16px;
@@ -63,13 +71,20 @@ const StyledMenu = styled.nav`
     display: flex;
     gap: 30px;
     list-style: none;
+
+    @media ${theme.media.mobile} {
+      font-size: 14px;
+    }
   }
 `
 
 const StyledHr = styled.hr`
   height: 1px;
   align-self: stretch;
-  margin: 50px 0 50px 0;
+  margin: 50px 0;
+  @media ${theme.media.mobile} {
+    margin: 50px 0 20px 0;
+  }
 `
 
 const StyledH3 = styled.h3`
@@ -79,6 +94,9 @@ const StyledH3 = styled.h3`
   font-weight: 700;
   line-height: 150%;
   margin: 0 0 16px 0;
+  @media ${theme.media.mobile} {
+    margin: 26px 0 16px 0;
+  }
 `
 const StyledInput = styled.input`
   height: 48px;
@@ -93,18 +111,29 @@ const StyledInputBtn = styled.input`
   height: 48px;
   width: 127px;
   color: var(--Black, #000);
+  background-color: #fff;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   margin: 0 16px;
+  @media ${theme.media.mobile} {
+    margin: 0 0 30px 0;
+  }
 `
 
 const StyledP = styled.p`
   font-size: 14px;
   margin: 0 0 0 70px;
+
+  @media ${theme.media.mobile} {
+    margin: 0;
+  }
 `
 
 const IconsDiv = styled.div`
   margin: 0 70px 0 0;
+  @media ${theme.media.mobile} {
+    margin: 0;
+  }
 `

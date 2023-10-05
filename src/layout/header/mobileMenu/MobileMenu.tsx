@@ -7,16 +7,16 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 export const MobileMenu = () => {
     return (
         <StyledMobileMenu>
-            <BurgerBtn isOpen={true}>
+            <BurgerBtn isOpen={false}>
                 <span></span>
             </BurgerBtn>
             <a href="">
-                <StyledLetsTalkBtn isOpen={true}>Поболтаем?</StyledLetsTalkBtn>
+                <StyledLetsTalkBtn isOpen={false}>Поболтаем?</StyledLetsTalkBtn>
             </a>
-            <BurgerBtn isOpen={true}>
+            <BurgerBtn isOpen={false}>
                 <span></span>
             </BurgerBtn>
-            <MobileMenuWrapper isOpen={true}>
+            <MobileMenuWrapper isOpen={false}>
                 <ul>
                     <li><a href="">Мои проекты</a></li>
                     <li><a href="">Обо мне</a></li>

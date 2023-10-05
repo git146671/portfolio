@@ -4,21 +4,24 @@ import styled from "styled-components";
 import me2Photo from "../../../assets/images/Me2.jpg";
 import me3Photo from "../../../assets/images/MeSquare.jpg";
 import {Container} from "../../../components/container/Container";
+import {theme} from "../../../styles/Theme";
 
 type AboutMePicturePropsType = {
     width: string;
     height: string;
+    small_width: string;
+    small_height: string;
     margin: string;
 }
 export const AboutMe = () => {
     return (
         <StyledAboutMe>
             <Container maxWidth={"1050px"}>
-                <FlexWrapper justify={"space-between"}>
+                <FlexWrapper justify={"space-between"} wrap={"wrap"}>
                     <StyledAboutMeHeader>
                         <StyledSpan>Обо мне</StyledSpan>
                         <StyledSlogan>НЕ ЛЮБЛЮ ДЕВИЗЫ ПОЭТОМУ ЕГО НЕТ</StyledSlogan>
-                        <Photo src={me2Photo} width={"532px"} height={"498px"} margin={"100 0 0 0"}/>
+                        <Photo src={me2Photo} width={"532px"} height={"498px"} small_width={"305px"} small_height={"286px"} margin={"100 0 0 0"}/>
                     </StyledAboutMeHeader>
                     <StyledAboutMeText>
                         <StyledP>Меня зовут Плеханов Антон. У меня есть прекрасная жена Лена и трое деток.<br/><br/>
@@ -27,7 +30,7 @@ export const AboutMe = () => {
                             Данное портфолио должно было рассказать о моих профессиональных навыках, но вместо этого я
                             решил рассказать немного о себе просто как о человеке.
                         </StyledP>
-                        <Photo src={me3Photo} width={"440px"} height={"412px"} margin={"100 0 0 0"}/>
+                        <Photo src={me3Photo} width={"440px"} height={"412px"} small_width={"276px"} small_height={"259px"} margin={"100 0 0 0"}/>
                     </StyledAboutMeText>
                 </FlexWrapper>
             </Container>
@@ -37,9 +40,11 @@ export const AboutMe = () => {
 
 const StyledAboutMeHeader = styled.div`
   margin: 109px 0 16px 0;
+  @media ${theme.media.mobile} {
+    margin: 49px 0 16px 0;
 
+  }
 `
-
 const StyledAboutMe = styled.section`
   background-color: #887070;
   width: 100%;
@@ -50,12 +55,23 @@ const Photo = styled.img<AboutMePicturePropsType>`
   height: ${props => props.height};
   margin: ${props => props.margin};
   flex-shrink: 0;
+
+  @media ${theme.media.mobile} {
+    width: ${props => props.small_width};
+    height: ${props => props.small_height};
+    margin-bottom: 50px;
+    align-self: center;
+  }
 `
 
 const StyledAboutMeText = styled.div`
 
   width: 440px;
   margin: 0 0 205px 0;
+
+  @media ${theme.media.mobile} {
+    margin-bottom: 0;
+  }
 `
 const StyledSpan = styled.span`
   font-size: 16px;
@@ -73,6 +89,12 @@ const StyledSlogan = styled.div`
   font-variant: all-small-caps;
   max-width: 350px;
   margin: 0 0 240px 0;
+
+  @media ${theme.media.mobile} {
+    font-size: 43px;
+    padding: 0;
+    margin-bottom: 30px;
+  }
 `
 const StyledP = styled.p`
   color: var(--Gray-6, #F2F2F2);
@@ -81,4 +103,8 @@ const StyledP = styled.p`
   font-weight: 400;
   line-height: 150%;
   margin: 109px 0 204px 0;
+
+  @media ${theme.media.mobile} {
+    margin: 0 0 61px 0;
+  }
 `

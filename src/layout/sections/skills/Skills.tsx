@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
 import {Container} from "../../../components/container/Container";
+import {theme} from "../../../styles/Theme";
 
 type SkillPropsType = {
     iconObject: any;
@@ -14,7 +15,7 @@ export const Skills = () => {
     return (
         <section>
             <Container maxWidth={"1340px"}>
-                <FlexWrapper wrap={"wrap"} justify={"space-between"}>
+                <FlexWrapper wrap={"wrap"} justify={"space-around"}>
                     <Skill iconObject={<Icon iconId={"accident"} svgSize={"160px"} svgViewBox={"0 0 500 500"}/>}
                            skillHeader={"Реакция и ловкость"}
                            skillText={"Обладаю умением быстро сориентироваться в нестандартной ситуации, при этом не теряя концентрации и не подвергая опасности окружающих."}/>
@@ -56,11 +57,13 @@ export const Skill = (props: SkillPropsType) => {
 const StyledSkill = styled.div`
   margin: 15px;
   width: 31%;
+  min-width: 300px;
+  
 `
 
 const StyledSkillDescription = styled.div`
   margin: 15px;
-
+  text-align: left;
 `
 const StyledSkillDescriptionHeader = styled.h2`
   font-size: 30px;
@@ -68,6 +71,9 @@ const StyledSkillDescriptionHeader = styled.h2`
   font-weight: 300;
   line-height: normal;
 
+  @media ${theme.media.tablet} {
+    font-size: 25px;
+  }
 `
 
 const StyledSkillDescriptionText = styled.p`
@@ -76,4 +82,7 @@ const StyledSkillDescriptionText = styled.p`
   font-weight: 200;
   line-height: 123%;
   opacity: 70%;
+  @media ${theme.media.tablet} {
+    font-size: 14px;
+  }
 `

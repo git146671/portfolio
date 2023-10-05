@@ -5,6 +5,7 @@ import AlicePicture from "../../../assets/images/Alice.jpg";
 import AlexPicture from "../../../assets/images/Alex.jpg";
 import AnnaPicture from "../../../assets/images/Anna.jpg";
 import {Container} from "../../../components/container/Container";
+import {theme} from "../../../styles/Theme";
 
 type ProjectsPropsType = {
     bgi: any;
@@ -40,7 +41,7 @@ const StyledProjects = styled.section`
 export const Project = (props: ProjectsPropsType) => {
     return (
         <StyledProject bgi={props.bgi}>
-            <FlexWrapper justify={"space-around"}>
+            <FlexWrapper justify={"space-around"} wrap={"wrap"}>
                 <StyledProjectHeader>
                     <StyledH3>
                         {props.headerTopText}
@@ -64,26 +65,47 @@ const StyledProject = styled.div<ProjectsPropsType>`
   width: 1040px;
   height: 447px;
   background-image: url(${props => props.bgi});
-  margin: 5px;
+  margin: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media ${"screen and (max-width: 1040px)"} {
+    width: auto;
+    height: 620px;
+  }
 `
 
 const StyledProjectHeader = styled.div`
-  width: 433px;
+  max-width: 433px;
   color: white;
   font-size: 45px;
   font-style: normal;
   font-weight: 200;
   line-height: 120%;
+  text-align: left;
+  @media ${"screen and (max-width: 1040px)"} {
+    margin-left: 20px;
+  }
 `
 
 const StyledProjectText = styled.div`
-  width: 433px;
+  max-width: 433px;
   color: white;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   margin: 50px 0 0 0;
+  text-align: left;
+  @media ${"screen and (max-width: 1040px)"} {
+    margin-right: 30px;
+    
+  }
+
+  @media ${theme.media.mobile} {
+    margin-top: 0;
+  }
 `
 
 const StyledMyProjects = styled.span`
@@ -92,8 +114,14 @@ const StyledMyProjects = styled.span`
   font-weight: 700;
   line-height: 93.5%;
   padding: 170px 0 0 0;
-  width: 100px;
+ // width: 100px;
   align-self: flex-start;
+  text-align: left;
+
+  @media ${theme.media.mobile} {
+    font-size: 65px;
+    padding: 170px 0 0 10px;
+  }
 `
 
 const StyledH3 = styled.h3`
@@ -118,6 +146,9 @@ const StyledMainText = styled.p`
   font-weight: 400;
   line-height: 150%;
   margin: 50px 0 20px 130px;
+  @media ${"screen and (max-width: 1040px)"} {
+    margin-left: 20px;
+  }
 `
 const StyledA = styled.a`
   font-size: 16px;
