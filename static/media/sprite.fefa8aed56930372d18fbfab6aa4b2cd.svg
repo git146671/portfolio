@@ -111,4 +111,27 @@
         <path class="a" d="M5.5,19.6V40.5a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5a2,2,0,0,0-2-2H7.5a2,2,0,0,0-2,2V19.6"/><path class="a" d="M25.7547,33.6191V14.3809h6.2982a6.461,6.461,0,0,1,0,12.922H25.7547"/><line class="a" x1="9.5" y1="33.562" x2="15.8847" y2="14.3809"/><line class="a" x1="22.0048" y1="33.6191" x2="15.8847" y2="14.3809"/><line class="a" x1="19.9575" y1="27.1836" x2="11.6231" y2="27.1836"/>
     </g>
 
+    <g id="circleText" fill="none" stroke="#000000">
+        <title>Red Hot Chilli Peppers Logo</title>
+        <defs>
+        <path d="M243.2, 382.4c-74.8,
+    0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
+    135.5 S318, 382.4, 243.2, 382.4z" id="textcircle" />
+            <style>
+            text {
+            font-size: 60px;
+            font-family: Franklin Gothic, sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 22px;
+            }
+        </style>
+    </defs>
+        <text dy="70" textLength="1200">
+        <textPath xlink:href="#textcircle">
+            Red Hot Chilli Peppers
+        </textPath>
+    </text>
+    </g>
+
 </svg>
